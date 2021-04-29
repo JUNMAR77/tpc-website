@@ -17,42 +17,42 @@ Route::get('/', 'App\Http\Controllers\HomePageController@home_page')->name('home
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
 
-Route::get('/transcript-of-record', 'TranscriptOfRecordController@tor')->name('tor');
+Route::get('/transcript-of-record', 'App\Http\Controllers\TranscriptOfRecordController@tor')->name('tor');
 
 /*
 |About SJA Pages --------------------------------------------------------------------------
 */
 
-Route::get('/school-profile', 'AboutController@school_profile')->name('school_profile');
-Route::get('/vision-mission', 'AboutController@vision_mission')->name('vision_mission');
-Route::get('/history', 'AboutController@history')->name('history');
-Route::get('/hymn', 'AboutController@hymn')->name('hymn');
-Route::get('/award-and-recognition', 'AboutController@award_recognition')->name('award_recognition');
-Route::get('/administration-and-offices', 'AboutController@administration_offices')->name('administration_offices');
-Route::get('/faculty-and-staff', 'AboutController@faculty_staff')->name('faculty_staff');
+Route::get('/school-profile', 'App\Http\Controllers\AboutController@school_profile')->name('school_profile');
+Route::get('/vision-mission', 'App\Http\Controllers\AboutController@vision_mission')->name('vision_mission');
+Route::get('/history', 'App\Http\Controllers\AboutController@history')->name('history');
+Route::get('/hymn', 'App\Http\Controllers\AboutController@hymn')->name('hymn');
+Route::get('/award-and-recognition', 'App\Http\Controllers\AboutController@award_recognition')->name('award_recognition');
+Route::get('/administration-and-offices', 'App\Http\Controllers\AboutController@administration_offices')->name('administration_offices');
+Route::get('/faculty-and-staff', 'App\Http\Controllers\AboutController@faculty_staff')->name('faculty_staff');
 
 /*
 |Academic Pages --------------------------------------------------------------------------
 */
 
-Route::get('/bael', 'AcademicController@bael')->name('bael');
-Route::get('/baps', 'AcademicController@baps')->name('baps');
-Route::get('/bsa', 'AcademicController@bsa')->name('bsa');
-Route::get('/bsais', 'AcademicController@bsais')->name('bsais');
-Route::get('/bsis', 'AcademicController@bsis')->name('bsis');
+Route::get('/bael', 'App\Http\Controllers\AcademicController@bael')->name('bael');
+Route::get('/baps', 'App\Http\Controllers\AcademicController@baps')->name('baps');
+Route::get('/bsa', 'App\Http\Controllers\AcademicController@bsa')->name('bsa');
+Route::get('/bsais', 'App\Http\Controllers\AcademicController@bsais')->name('bsais');
+Route::get('/bsis', 'App\Http\Controllers\AcademicController@bsis')->name('bsis');
 /*
 |Students Pages --------------------------------------------------------------------------
 */
 
-Route::get('/students-organizations', 'StudentsController@students_organizations')->name('students_organizations');
-Route::get('/students-services', 'StudentsController@students_services')->name('students_services');
-Route::get('/publication', 'StudentsController@publication')->name('publication');
-Route::get('/students-council', 'StudentsController@students_council')->name('students_council');
-Route::get('/students-handbook', 'StudentsController@students_handbook')->name('students_handbook');
-Route::get('/guidance-services', 'StudentsController@guidance_services')->name('guidance_services');
-Route::get('/library-services', 'StudentsController@library_services')->name('library_services');
+Route::get('/students-organizations', 'App\Http\Controllers\StudentsController@students_organizations')->name('students_organizations');
+Route::get('/students-services', 'App\Http\Controllers\StudentsController@students_services')->name('students_services');
+Route::get('/publication', 'App\Http\Controllers\StudentsController@publication')->name('publication');
+Route::get('/students-council', 'App\Http\Controllers\StudentsController@students_council')->name('students_council');
+Route::get('/students-handbook', 'App\Http\Controllers\StudentsController@students_handbook')->name('students_handbook');
+Route::get('/guidance-services', 'App\Http\Controllers\StudentsController@guidance_services')->name('guidance_services');
+Route::get('/library-services', 'App\Http\Controllers\StudentsController@library_services')->name('library_services');
 
 Route::group(['prefix' => 'registrar', 'middleware' => ['auth', 'userroles'], 'roles' => ['registrar']], function() {
     Route::get('dashboard', 'Registrar\RegistrarDashboardController@index')->name('registrar.dashboard');

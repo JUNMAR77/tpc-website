@@ -8,7 +8,7 @@
                         <p>TALIBON POLYTECHNIC COLLEGE was was created through the efforts and support of many people, who saw the need of a local college for deserving youth of Talibon.... <a href="{{ route('history') }}">readmore</a></p>
                     </div>
                     <div class="col-lg-4 col-md-6 footer-links">
-                        <h4>About SJA</h4>
+                        <h4>About TPC</h4>
                         <ul>
                             <li><i class="ion-ios-arrow-right"></i> <a href="{{ route('home_page') }}">Home</a></li>
                             <li><i class="ion-ios-arrow-right"></i> <a href="{{ route('vision_mission') }}">Vision Mission Values</a></li>
